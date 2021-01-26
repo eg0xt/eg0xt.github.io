@@ -194,13 +194,13 @@ INFO: 2014/09/29 Using config file: config.toml
 INFO: 2014/09/29 syncing from /Users/quoha/Sites/zafta/static/ to /Users/quoha/Sites/zafta/public/
 WARN: 2014/09/29 Unable to locate layout: [index.html _default/list.html _default/single.html]
 WARN: 2014/09/29 Unable to locate layout: [404.html]
-0 draft content 
-0 future content 
-0 pages created 
+0 draft content
+0 future content
+0 pages created
 0 tags created
 0 categories created
 in 2 ms
-$ 
+$
 </code></pre></div><p>The &ldquo;<code>--verbose</code>&rdquo; flag gives extra information that will be helpful when we build the template. Every line of the output that starts with &ldquo;INFO:&rdquo; or &ldquo;WARN:&rdquo; is present because we used that flag. The lines that start with &ldquo;WARN:&rdquo; are warning messages. We&rsquo;ll go over them later.</p>
 <p>We can verify that the command worked by looking at the directory again.</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ ls -l
@@ -217,7 +217,7 @@ $
 total 16
 -rw-r--r--  1 quoha  staff  416 Sep 29 17:02 index.xml
 -rw-r--r--  1 quoha  staff  262 Sep 29 17:02 sitemap.xml
-$ 
+$
 </code></pre></div><p>Hugo created two XML files, which is standard, but there are no HTML files.</p>
 <h3 id="test-the-new-site">Test the New Site</h3>
 <p>Verify that you can run the built-in web server. It will dramatically shorten your development cycle if you do. Start it by running the &ldquo;server&rdquo; command. If it is successful, you will see output similar to the following:</p>
@@ -226,14 +226,14 @@ INFO: 2014/09/29 Using config file: /Users/quoha/Sites/zafta/config.toml
 INFO: 2014/09/29 syncing from /Users/quoha/Sites/zafta/static/ to /Users/quoha/Sites/zafta/public/
 WARN: 2014/09/29 Unable to locate layout: [index.html _default/list.html _default/single.html]
 WARN: 2014/09/29 Unable to locate layout: [404.html]
-0 draft content 
-0 future content 
-0 pages created 
+0 draft content
+0 future content
+0 pages created
 0 tags created
 0 categories created
 in 2 ms
 Serving pages from /Users/quoha/Sites/zafta/public
-Web Server is available at http://localhost:1313
+Web Server is available at https://localhost:1313
 Press Ctrl+C to stop
 </code></pre></div><p>Connect to the listed URL (it&rsquo;s on the line that starts with &ldquo;Web Server&rdquo;). If everything is working correctly, you should get a page that shows the following:</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">index.xml
@@ -273,7 +273,7 @@ $ find themes -type f | xargs ls -l
 -rw-r--r--  1 quoha  staff     0 Sep 29 17:31 themes/zafta/layouts/partials/footer.html
 -rw-r--r--  1 quoha  staff     0 Sep 29 17:31 themes/zafta/layouts/partials/header.html
 -rw-r--r--  1 quoha  staff    93 Sep 29 17:31 themes/zafta/theme.toml
-$ 
+$
 </code></pre></div><p>The skeleton includes templates (the files ending in .html), license file, a description of your theme (the theme.toml file), and an empty archetype.</p>
 <p>Please take a minute to fill out the theme.toml and LICENSE.md files. They&rsquo;re optional, but if you&rsquo;re going to be distributing your theme, it tells the world who to praise (or blame). It&rsquo;s also nice to declare the license so that people will know how they can use the theme.</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ vi themes/zafta/theme.toml
@@ -314,9 +314,9 @@ INFO: 2014/09/29 Using config file: /Users/quoha/Sites/zafta/config.toml
 INFO: 2014/09/29 syncing from /Users/quoha/Sites/zafta/themes/zafta/static/ to /Users/quoha/Sites/zafta/public/
 INFO: 2014/09/29 syncing from /Users/quoha/Sites/zafta/static/ to /Users/quoha/Sites/zafta/public/
 WARN: 2014/09/29 Unable to locate layout: [404.html theme/404.html]
-0 draft content 
-0 future content 
-0 pages created 
+0 draft content
+0 future content
+0 pages created
 0 tags created
 0 categories created
 in 2 ms
@@ -346,7 +346,7 @@ $
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ find . -name index.html | xargs ls -l
 -rw-r--r--  1 quoha  staff  0 Sep 29 20:21 ./public/index.html
 -rw-r--r--  1 quoha  staff  0 Sep 29 17:31 ./themes/zafta/layouts/index.html
-$ 
+$
 </code></pre></div><h4 id="the-magic-of-static">The Magic of Static</h4>
 <p>Hugo does two things when generating the site. It uses templates to transform content into HTML and it copies static files into the site. Unlike content, static files are not transformed. They are copied exactly as they are.</p>
 <p>Hugo assumes that your site will use both CSS and JavaScript, so it creates directories in your theme to hold them. Remember opinions? Well, Hugo&rsquo;s opinion is that you&rsquo;ll store your CSS in a directory named css/ and your JavaScript in a directory named js/. If you don&rsquo;t like that, you can change the directory names in your theme directory or even delete them completely. Hugo&rsquo;s nice enough to offer its opinion, then behave nicely if you disagree.</p>
@@ -359,7 +359,7 @@ drwxr-xr-x  4 quoha  staff  136 Sep 29 17:31 themes/zafta/layouts/partials
 drwxr-xr-x  4 quoha  staff  136 Sep 29 17:31 themes/zafta/static
 drwxr-xr-x  2 quoha  staff   68 Sep 29 17:31 themes/zafta/static/css
 drwxr-xr-x  2 quoha  staff   68 Sep 29 17:31 themes/zafta/static/js
-$ 
+$
 </code></pre></div><h2 id="the-theme-development-cycle">The Theme Development Cycle</h2>
 <p>When you&rsquo;re working on a theme, you will make changes in the theme&rsquo;s directory, rebuild the site, and check your changes in the browser. Hugo makes this very easy:</p>
 <ol>
@@ -395,23 +395,23 @@ INFO: 2014/09/29 Using config file: /Users/quoha/Sites/zafta/config.toml
 INFO: 2014/09/29 syncing from /Users/quoha/Sites/zafta/themes/zafta/static/ to /Users/quoha/Sites/zafta/public/
 INFO: 2014/09/29 syncing from /Users/quoha/Sites/zafta/static/ to /Users/quoha/Sites/zafta/public/
 WARN: 2014/09/29 Unable to locate layout: [404.html theme/404.html]
-0 draft content 
-0 future content 
-0 pages created 
+0 draft content
+0 future content
+0 pages created
 0 tags created
 0 categories created
 in 2 ms
 Watching for changes in /Users/quoha/Sites/zafta/content
 Serving pages from /Users/quoha/Sites/zafta/public
-Web Server is available at http://localhost:1313
+Web Server is available at https://localhost:1313
 Press Ctrl+C to stop
 INFO: 2014/09/29 File System Event: [&#34;/Users/quoha/Sites/zafta/themes/zafta/layouts/index.html&#34;: MODIFY|ATTRIB]
 Change detected, rebuilding site
 
 WARN: 2014/09/29 Unable to locate layout: [404.html theme/404.html]
-0 draft content 
-0 future content 
-0 pages created 
+0 draft content
+0 future content
+0 pages created
 0 tags created
 0 categories created
 in 1 ms
@@ -426,12 +426,12 @@ in 1 ms
 <h3 id="make-a-static-home-page">Make a Static Home Page</h3>
 <p>Right now, that page is empty because we don&rsquo;t have any content and we don&rsquo;t have any logic in the template. Let&rsquo;s change that by adding some text to the template.</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ vi themes/zafta/layouts/index.html
-&lt;!DOCTYPE html&gt; 
-&lt;html&gt; 
-&lt;body&gt; 
-  &lt;p&gt;hugo says hello!&lt;/p&gt; 
-&lt;/body&gt; 
-&lt;/html&gt; 
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+  &lt;p&gt;hugo says hello!&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
 :wq
 
 $
@@ -441,9 +441,9 @@ INFO: 2014/09/29 Using config file: /Users/quoha/Sites/zafta/config.toml
 INFO: 2014/09/29 syncing from /Users/quoha/Sites/zafta/themes/zafta/static/ to /Users/quoha/Sites/zafta/public/
 INFO: 2014/09/29 syncing from /Users/quoha/Sites/zafta/static/ to /Users/quoha/Sites/zafta/public/
 WARN: 2014/09/29 Unable to locate layout: [404.html theme/404.html]
-0 draft content 
-0 future content 
-0 pages created 
+0 draft content
+0 future content
+0 pages created
 0 tags created
 0 categories created
 in 2 ms
@@ -451,23 +451,23 @@ in 2 ms
 $ find public -type f -name &#39;*.html&#39; | xargs ls -l
 -rw-r--r--  1 quoha  staff  78 Sep 29 21:26 public/index.html
 
-$ cat public/index.html 
-&lt;!DOCTYPE html&gt; 
-&lt;html&gt; 
-&lt;body&gt; 
-  &lt;p&gt;hugo says hello!&lt;/p&gt; 
+$ cat public/index.html
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+  &lt;p&gt;hugo says hello!&lt;/p&gt;
 &lt;/html&gt;
 </code></pre></div><h4 id="live-reload-1">Live Reload</h4>
 <p>Note: If you&rsquo;re running the server with the <code>--watch</code> option, you&rsquo;ll see different content in the file:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ cat public/index.html 
-&lt;!DOCTYPE html&gt; 
-&lt;html&gt; 
-&lt;body&gt; 
-  &lt;p&gt;hugo says hello!&lt;/p&gt; 
-&lt;script&gt;document.write(&#39;&lt;script src=&#34;http://&#39; 
-        + (location.host || &#39;localhost&#39;).split(&#39;:&#39;)[0] 
-    + &#39;:1313/livereload.js?mindelay=10&#34;&gt;&lt;/&#39; 
-        + &#39;script&gt;&#39;)&lt;/script&gt;&lt;/body&gt; 
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ cat public/index.html
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+  &lt;p&gt;hugo says hello!&lt;/p&gt;
+&lt;script&gt;document.write(&#39;&lt;script src=&#34;https://&#39;
+        + (location.host || &#39;localhost&#39;).split(&#39;:&#39;)[0]
+    + &#39;:1313/livereload.js?mindelay=10&#34;&gt;&lt;/&#39;
+        + &#39;script&gt;&#39;)&lt;/script&gt;&lt;/body&gt;
 &lt;/html&gt;
 </code></pre></div><p>When you use <code>--watch</code>, the Live Reload script is added by Hugo. Look for live reload in the documentation to see what it does and how to disable it.</p>
 <h3 id="build-a-dynamic-home-page">Build a &ldquo;Dynamic&rdquo; Home Page</h3>
@@ -481,7 +481,7 @@ INFO: 2014/09/29 attempting to create  post/first.md of post
 INFO: 2014/09/29 curpath: /Users/quoha/Sites/zafta/themes/zafta/archetypes/default.md
 ERROR: 2014/09/29 Unable to Cast &lt;nil&gt; to map[string]interface{}
 
-$ 
+$
 </code></pre></div><p>That wasn&rsquo;t very nice, was it?</p>
 <p>The &ldquo;new&rdquo; command uses an archetype to create the post file. Hugo created an empty default archetype file, but that causes an error when there&rsquo;s a theme. For me, the workaround was to create an archetypes file specifically for the post type.</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ vi themes/zafta/archetypes/post.md
@@ -515,7 +515,7 @@ total 16
 -rw-r--r--  1 quoha  staff  104 Sep 29 21:54 first.md
 -rw-r--r--  1 quoha  staff  105 Sep 29 21:57 second.md
 
-$ cat content/post/first.md 
+$ cat content/post/first.md
 +++
 Categories = []
 Description = &#34;&#34;
@@ -526,7 +526,7 @@ title = &#34;first&#34;
 +++
 my first post
 
-$ cat content/post/second.md 
+$ cat content/post/second.md
 +++
 Categories = []
 Description = &#34;&#34;
@@ -537,7 +537,7 @@ title = &#34;second&#34;
 +++
 my second post
 
-$ 
+$
 </code></pre></div><p>Build the web site and then verify the results.</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ rm -rf public
 $ hugo --verbose
@@ -546,9 +546,9 @@ INFO: 2014/09/29 syncing from /Users/quoha/Sites/zafta/themes/zafta/static/ to /
 INFO: 2014/09/29 syncing from /Users/quoha/Sites/zafta/static/ to /Users/quoha/Sites/zafta/public/
 INFO: 2014/09/29 found taxonomies: map[string]string{&#34;category&#34;:&#34;categories&#34;, &#34;tag&#34;:&#34;tags&#34;}
 WARN: 2014/09/29 Unable to locate layout: [404.html theme/404.html]
-0 draft content 
-0 future content 
-2 pages created 
+0 draft content
+0 future content
+2 pages created
 0 tags created
 0 categories created
 in 4 ms
@@ -567,7 +567,7 @@ $
 <p>There are three other types of templates: partials, content views, and terms. We will not go into much detail on these.</p>
 <h3 id="add-content-to-the-homepage">Add Content to the Homepage</h3>
 <p>The home page will contain a list of posts. Let&rsquo;s update its template to add the posts that we just created. The logic in the template will run every time we build the site.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ vi themes/zafta/layouts/index.html 
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ vi themes/zafta/layouts/index.html
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;body&gt;
@@ -597,26 +597,26 @@ INFO: 2014/09/29 syncing from /Users/quoha/Sites/zafta/themes/zafta/static/ to /
 INFO: 2014/09/29 syncing from /Users/quoha/Sites/zafta/static/ to /Users/quoha/Sites/zafta/public/
 INFO: 2014/09/29 found taxonomies: map[string]string{&#34;tag&#34;:&#34;tags&#34;, &#34;category&#34;:&#34;categories&#34;}
 WARN: 2014/09/29 Unable to locate layout: [404.html theme/404.html]
-0 draft content 
-0 future content 
-2 pages created 
+0 draft content
+0 future content
+2 pages created
 0 tags created
 0 categories created
 in 4 ms
-$ find public -type f -name &#39;*.html&#39; | xargs ls -l 
+$ find public -type f -name &#39;*.html&#39; | xargs ls -l
 -rw-r--r--  1 quoha  staff  94 Sep 29 22:23 public/index.html
 -rw-r--r--  1 quoha  staff   0 Sep 29 22:23 public/post/first/index.html
 -rw-r--r--  1 quoha  staff   0 Sep 29 22:23 public/post/index.html
 -rw-r--r--  1 quoha  staff   0 Sep 29 22:23 public/post/second/index.html
-$ cat public/index.html 
+$ cat public/index.html
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;body&gt;
-  
+
     &lt;h1&gt;second&lt;/h1&gt;
-  
+
     &lt;h1&gt;first&lt;/h1&gt;
-  
+
 &lt;/body&gt;
 &lt;/html&gt;
 $
@@ -632,7 +632,7 @@ $
 <p>Remember, any content that we haven&rsquo;t created a template for will end up using this template. That can be good or bad. Bad because I know that we&rsquo;re going to be adding different types of content and we&rsquo;re going to end up undoing some of the changes we&rsquo;ve made. It&rsquo;s good because we&rsquo;ll be able to see immediate results. It&rsquo;s also good to start here because we can start to build the basic layout for the site. As we add more content types, we&rsquo;ll refactor this file and move logic around. Hugo makes that fairly painless, so we&rsquo;ll accept the cost and proceed.</p>
 <p>Please see the Hugo documentation on template rendering for all the details on determining which template to use. And, as the docs mention, if you&rsquo;re building a single page application (SPA) web site, you can delete all of the other templates and work with just the default single page. That&rsquo;s a refreshing amount of joy right there.</p>
 <h4 id="update-the-template-file">Update the Template File</h4>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ vi themes/zafta/layouts/_default/single.html 
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ vi themes/zafta/layouts/_default/single.html
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -654,9 +654,9 @@ INFO: 2014/09/29 syncing from /Users/quoha/Sites/zafta/themes/zafta/static/ to /
 INFO: 2014/09/29 syncing from /Users/quoha/Sites/zafta/static/ to /Users/quoha/Sites/zafta/public/
 INFO: 2014/09/29 found taxonomies: map[string]string{&#34;tag&#34;:&#34;tags&#34;, &#34;category&#34;:&#34;categories&#34;}
 WARN: 2014/09/29 Unable to locate layout: [404.html theme/404.html]
-0 draft content 
-0 future content 
-2 pages created 
+0 draft content
+0 future content
+2 pages created
 0 tags created
 0 categories created
 in 4 ms
@@ -667,7 +667,7 @@ $ find public -type f -name &#39;*.html&#39; | xargs ls -l
 -rw-r--r--  1 quoha  staff    0 Sep 29 22:40 public/post/index.html
 -rw-r--r--  1 quoha  staff  128 Sep 29 22:40 public/post/second/index.html
 
-$ cat public/post/first/index.html 
+$ cat public/post/first/index.html
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -680,7 +680,7 @@ $ cat public/post/first/index.html
 &lt;/body&gt;
 &lt;/html&gt;
 
-$ cat public/post/second/index.html 
+$ cat public/post/second/index.html
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -713,9 +713,9 @@ INFO: 2014/09/29 syncing from /Users/quoha/Sites/zafta/themes/zafta/static/ to /
 INFO: 2014/09/29 syncing from /Users/quoha/Sites/zafta/static/ to /Users/quoha/Sites/zafta/public/
 INFO: 2014/09/29 found taxonomies: map[string]string{&#34;tag&#34;:&#34;tags&#34;, &#34;category&#34;:&#34;categories&#34;}
 WARN: 2014/09/29 Unable to locate layout: [404.html theme/404.html]
-0 draft content 
-0 future content 
-2 pages created 
+0 draft content
+0 future content
+2 pages created
 0 tags created
 0 categories created
 in 4 ms
@@ -726,15 +726,15 @@ $ find public -type f -name &#39;*.html&#39; | xargs ls -l
 -rw-r--r--  1 quoha  staff    0 Sep 29 22:44 public/post/index.html
 -rw-r--r--  1 quoha  staff  128 Sep 29 22:44 public/post/second/index.html
 
-$ cat public/index.html 
+$ cat public/index.html
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;body&gt;
-  
+
     &lt;h1&gt;&lt;a href=&#34;/post/second/&#34;&gt;second&lt;/a&gt;&lt;/h1&gt;
-  
+
     &lt;h1&gt;&lt;a href=&#34;/post/first/&#34;&gt;first&lt;/a&gt;&lt;/h1&gt;
-  
+
 &lt;/body&gt;
 &lt;/html&gt;
 
@@ -748,7 +748,7 @@ $
 <h2 id="creating-top-level-pages">Creating Top Level Pages</h2>
 <p>Let&rsquo;s add an &ldquo;about&rdquo; page and display it at the top level (as opposed to a sub-level like we did with posts).</p>
 <p>The default in Hugo is to use the directory structure of the content/ directory to guide the location of the generated html in the public/ directory. Let&rsquo;s verify that by creating an &ldquo;about&rdquo; page at the top level:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ vi content/about.md 
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ vi content/about.md
 +++
 title = &#34;about&#34;
 description = &#34;about this site&#34;
@@ -773,11 +773,11 @@ i&#39;m speechless
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;body&gt;
-    &lt;h1&gt;&lt;a href=&#34;http://localhost:1313/post/theme/&#34;&gt;creating a new theme&lt;/a&gt;&lt;/h1&gt;
-    &lt;h1&gt;&lt;a href=&#34;http://localhost:1313/about-time/&#34;&gt;about&lt;/a&gt;&lt;/h1&gt;
-    &lt;h1&gt;&lt;a href=&#34;http://localhost:1313/post/second-post/&#34;&gt;second&lt;/a&gt;&lt;/h1&gt;
-    &lt;h1&gt;&lt;a href=&#34;http://localhost:1313/post/first-post/&#34;&gt;first&lt;/a&gt;&lt;/h1&gt;
-&lt;script&gt;document.write(&#39;&lt;script src=&#34;http://&#39;
+    &lt;h1&gt;&lt;a href=&#34;https://localhost:1313/post/theme/&#34;&gt;creating a new theme&lt;/a&gt;&lt;/h1&gt;
+    &lt;h1&gt;&lt;a href=&#34;https://localhost:1313/about-time/&#34;&gt;about&lt;/a&gt;&lt;/h1&gt;
+    &lt;h1&gt;&lt;a href=&#34;https://localhost:1313/post/second-post/&#34;&gt;second&lt;/a&gt;&lt;/h1&gt;
+    &lt;h1&gt;&lt;a href=&#34;https://localhost:1313/post/first-post/&#34;&gt;first&lt;/a&gt;&lt;/h1&gt;
+&lt;script&gt;document.write(&#39;&lt;script src=&#34;https://&#39;
         + (location.host || &#39;localhost&#39;).split(&#39;:&#39;)[0]
 		+ &#39;:1313/livereload.js?mindelay=10&#34;&gt;&lt;/&#39;
         + &#39;script&gt;&#39;)&lt;/script&gt;&lt;/body&gt;
@@ -941,15 +941,16 @@ $ vi themes/zafta/layouts/_default/single.html
     </div>
     <a id="back_to_top" href="#" class="back_to_top"><i class="ri-arrow-up-s-line"></i></a>
     <footer class="footer">
-    <div class="powered_by">
-        <a href="https://varkai.com">Designed by VarKai,</a>
-        <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
-    </div>
+  <div class="powered_by">
+    <a href="https://varkai.com">Designed by VarKai,</a>
+    <a href="https://www.gohugo.io/">Proudly published with Hugo</a>
+  </div>
 
-    <div class="footer_slogan">
-        <span>My spiritual home</span>
-    </div>
+  <div class="footer_slogan">
+    <span>My spiritual home</span>
+  </div>
 </footer>
+
     <script src="http://eg0xt.github.io/js/jquery-3.5.1.min.js"></script>
 <link href="http://eg0xt.github.io/css/fancybox.min.css" rel="stylesheet">
 <script src="http://eg0xt.github.io/js/fancybox.min.js"></script>
