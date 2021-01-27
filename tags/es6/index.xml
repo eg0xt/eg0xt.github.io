@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>es6 on eg0xt</title>
+    <link>http://eg0xt.github.io/tags/es6/</link>
+    <description>Recent content in es6 on eg0xt</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Fri, 01 Jan 2021 14:26:00 +0800</lastBuildDate><atom:link href="http://eg0xt.github.io/tags/es6/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>es6</title>
+      <link>http://eg0xt.github.io/posts/es6/</link>
+      <pubDate>Fri, 01 Jan 2021 14:26:00 +0800</pubDate>
+      
+      <guid>http://eg0xt.github.io/posts/es6/</guid>
+      <description>es6</description>
+    </item>
+    
+  </channel>
+</rss>
